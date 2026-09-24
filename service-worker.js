@@ -1,4 +1,4 @@
-const CACHE_NAME = 'titan-halloween-tools-v7';
+const CACHE_NAME = 'titan-halloween-tools-v8';
 const APP_SHELL = [
   './',
   './index.html',

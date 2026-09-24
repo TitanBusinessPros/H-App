@@ -464,7 +464,7 @@
             
             <div class="actions">
                 <button id="calculateTotal">Calculate Total</button>
-                <button id="printForm">Print Form</button>
+                <button id="downloadFormPNG">Download PNG</button>
             </div>
         </div>
     </div>
@@ -513,7 +513,7 @@
         const calculateTotalButton = document.getElementById('calculateTotal');
         const generatePNGButton = document.getElementById('generatePNG');
         const resetFormButton = document.getElementById('resetForm');
-        const printFormButton = document.getElementById('printForm');
+        const downloadFormPNGButton = document.getElementById('downloadFormPNG');
         
         // Menu items array
         let menuItems = [
@@ -605,7 +605,7 @@
         calculateTotalButton.addEventListener('click', calculateTotal);
         generatePNGButton.addEventListener('click', generatePNG);
         resetFormButton.addEventListener('click', resetForm);
-        printFormButton.addEventListener('click', printForm);
+        downloadFormPNGButton.addEventListener('click', downloadFormPNG);
         
         // Functions
         function initForm() {
@@ -841,9 +841,32 @@
             calculateTotal();
         }
         
-        function printForm() {
+        function downloadFormPNG() {
             calculateTotal();
-            window.print();
+            downloadFormPNGButton.textContent = 'Generating...';
+            downloadFormPNGButton.disabled = true;
+
+            html2canvas(document.getElementById('orderForm'), {
+                scale: 2,
+                useCORS: true,
+                logging: false,
+                onclone: function(clonedDocument) {
+                    clonedDocument.querySelectorAll('#orderForm .actions').forEach(function(actions) {
+                        actions.style.display = 'none';
+                    });
+                }
+            }).then(function(canvas) {
+                const link = document.createElement('a');
+                link.download = `halloween-catering-order-${new Date().getTime()}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            }).catch(function(error) {
+                console.error('Error downloading order form PNG:', error);
+                alert('Error generating PNG. Please try again.');
+            }).finally(function() {
+                downloadFormPNGButton.textContent = 'Download PNG';
+                downloadFormPNGButton.disabled = false;
+            });
         }
     </script>
 </body>
