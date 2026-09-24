@@ -13,6 +13,10 @@ Free Halloween website tools from Titan Business Pros LLC. The homepage is [`ind
 7. [Haunted House Waiver Generator](haunted-house-waiver-generator.html) — customize a haunted attraction's name, rules, and theme, then download a waiver PNG.
 8. [Spooky Flyer Builder](spooky-flyer-builder.html) — choose from 12 templates, customize and position flyer text, and download the design as a PNG.
 
+## Game
+
+[Halloween Math Battle](halloween-math-battle.html) is embedded in `index.html` above the footer. It starts automatically on page load and gives the active player 15 seconds to choose the correct answer before the turn changes.
+
 ## Shared images
 
 - `images/Top image.png` is the homepage banner and is used in builders where specified.

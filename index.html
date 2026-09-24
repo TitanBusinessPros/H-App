@@ -30,6 +30,8 @@
     .cta { margin-top:36px; padding:28px; border:1px solid #694071; border-radius:14px; background:#20102b; }
     .cta h2 { margin:0 0 10px; font-size:clamp(1.5rem,4vw,2.2rem); }
     .cta p { color:var(--muted); }
+    .math-battle { margin-top:48px; overflow:hidden; border:1px solid #694071; border-radius:14px; background:#0f0c29; }
+    .math-battle iframe { display:block; width:100%; height:1600px; border:0; background:#0f0c29; }
     footer { padding:25px 18px 30px; border-top:2px solid #4c2e5a; background:#100719; text-align:center; color:#e9ddeb; }
     footer p { margin:3px 0; }
     footer .company { color:var(--orange); font-weight:800; }
@@ -91,6 +93,9 @@
       <p>Build a Halloween party invitation, haunted-house page, or another spooky idea of your own.</p>
       <a class="button" href="website-maker.html">Website maker <span aria-hidden="true">&nbsp;?</span></a>
     </section>
+    <section class="math-battle" id="math-battle" aria-label="Halloween Math Battle">
+      <iframe id="math-battle-frame" src="halloween-math-battle.html" title="Halloween Math Battle: solve timed math questions and defend your haunted house" loading="eager"></iframe>
+    </section>
   </main>
   <footer>
     <p class="company">Created by Titan Business Pros LLC</p>
@@ -98,5 +103,28 @@
     <p>Oklahoma City, OK</p>
     <p>2026 Titan Business Pros LLC. All rights reserved.</p>
   </footer>
+  <script>
+    const mathBattleFrame = document.getElementById('math-battle-frame');
+    let mathBattleSizeObserver;
+    mathBattleFrame.addEventListener('load', () => {
+      try {
+        const resizeMathBattle = () => {
+          const gameDocument = mathBattleFrame.contentDocument;
+          if (!gameDocument) return;
+          mathBattleFrame.style.height = Math.max(
+            900,
+            gameDocument.documentElement.scrollHeight,
+            gameDocument.body.scrollHeight
+          ) + 'px';
+        };
+        resizeMathBattle();
+        if (mathBattleSizeObserver) mathBattleSizeObserver.disconnect();
+        mathBattleSizeObserver = new ResizeObserver(resizeMathBattle);
+        mathBattleSizeObserver.observe(mathBattleFrame.contentDocument.documentElement);
+      } catch (error) {
+        // Keep the responsive fallback height for local file previews with restricted iframe access.
+      }
+    });
+  </script>
 </body>
 </html>

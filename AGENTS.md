@@ -1,8 +1,9 @@
 # Project memory and editing notes
 
 - This repository is Titan Business Pros LLC's free Halloween tools homepage and product collection. `index.html` is the product hub; keep its relative product links aligned with the HTML filenames in the repository root.
-- Current product order: Website Maker, Catering Generator, Coupon Generator, QR Code Generator, Horror Film Trivia Website Maker, Flyer Builder, Haunted House Waiver Generator, Spooky Flyer Builder.
+- Current product order: Website Maker, Catering Generator, Coupon Generator, QR Code Generator, Horror Film Trivia Website Maker, Flyer Builder, Haunted House Waiver Generator, Spooky Flyer Builder. Halloween Math Battle is embedded below the tool sections, above the footer.
 - Shared repository assets are `images/Top image.png` and `images/favicon.png`. Use the existing favicon for new product pages. The top banner belongs on the hub and on builders only where requested; do not include a builder-only banner in a user's exported page.
-- Local source HTML files are in the parent folder: `H-WM.html`, `HCG.html`, `HCB.html`, `Halloween QR Code Generator.html`, `HTWM.html`, `HFB.html`, `HHWG.html`, and `SFB.html`. The top-level parent `index.html` is a local working copy of the currently edited standalone tool. This repository's `index.html` remains the product hub.
+- Local source HTML files are in the parent folder: `H-WM.html`, `HCG.html`, `HCB.html`, `Halloween QR Code Generator.html`, `HTWM.html`, `HFB.html`, `HHWG.html`, `SFB.html`, and `HMB.html`. The top-level parent `index.html` mirrors this repository's product hub for local preview.
 - The flyer builder exports a PNG of exactly 3300 × 2550 pixels and embeds PNG `pHYs` metadata at 11,811 pixels per meter (about 300 DPI), yielding 11 × 8.5 inches. Verify both pixel dimensions and physical-resolution metadata when changing the export.
+- The homepage's Halloween Math Battle runs in its own iframe and starts automatically on page load. Its game script starts the 15-second timer as it loads; keep the answer buttons and timer active.
 - The user wants changes pushed to GitHub and the parent-folder local `index.html` synced after edits. Keep changes scoped to the request and preserve existing tool behavior.
