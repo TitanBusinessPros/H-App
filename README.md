@@ -15,7 +15,7 @@ Free Halloween website tools from Titan Business Pros LLC. The homepage is [`ind
 
 ## Game
 
-[Halloween Math Battle](halloween-math-battle.html) is embedded in `index.html` above the footer. It starts automatically on page load and gives the active player 15 seconds to choose the correct answer before the turn changes.
+[Halloween Math Battle](halloween-math-battle.html) is embedded in `index.html` above the footer. Its iframe loads immediately, starts automatically on page load, and gives the active player 15 seconds to choose the correct answer before the turn changes. Players answer using the game's on-page choices.
 
 ## Shared images
 
