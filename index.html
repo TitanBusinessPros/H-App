@@ -7,6 +7,8 @@
   <meta name="description" content="Make a free Halloween website with Titan Business Pros. Add spooky decorations, photos, colors, and sounds, then export your page.">
   <title>Free Halloween Tools | Titan Business Pros</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <style>
     :root { color-scheme: dark; --night:#170923; --panel:#24112f; --orange:#ff781f; --lime:#baff38; --white:#fff8ee; --muted:#e4d9e9; }
     * { box-sizing:border-box; }
@@ -36,6 +38,10 @@
     .maker h2 { margin:0 0 9px; color:var(--orange); font-size:1.4rem; }
     .maker p { color:var(--muted); }
     .button-row { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+    .app-download { display:inline-block; margin:0 auto 8px; padding:0; border:0; border-radius:12px; background:transparent; cursor:pointer; }
+    .app-download img { display:block; width:min(360px,80vw); height:auto; border-radius:12px; }
+    .app-download:focus-visible { outline:3px solid white; outline-offset:5px; }
+    .install-help { max-width:700px; margin:12px auto 0; color:var(--muted); }
     .button.secondary { border-color:var(--orange); background:transparent; color:var(--white); box-shadow:none; }
     .cta { margin-top:36px; padding:28px; border:1px solid #694071; border-radius:14px; background:#20102b; }
     .cta h2 { margin:0 0 10px; font-size:clamp(1.5rem,4vw,2.2rem); }
@@ -57,6 +63,8 @@
       <span class="eyebrow">Free tools from Titan Business Pros LLC</span>
       <h1 id="welcome">Free Halloween tools for all your needs!</h1>
       <p class="intro">Make a free Halloween events website with either of our two website makers. Both are free forever and cost nothing. When you finish, export your <code>index.html</code> and add it to a GitHub repository to make it a live website.</p>
+      <button class="app-download" id="install-app" type="button" aria-label="Install the free Halloween tools app"><img src="images/Click%20to%20download.png" alt="Click to download the free Halloween tools app"></button>
+      <p class="install-help" id="install-help" role="status" hidden></p>
       <section class="cta" aria-labelledby="publish-free">
         <h2 id="publish-free">Your website can stay free forever</h2>
         <p>The maker downloads an <code>index.html</code> file. Put that file in a GitHub repository and publish it with GitHub Pages to make your website available online at no cost.</p>
@@ -125,6 +133,31 @@
     <p>2026 Titan Business Pros LLC. All rights reserved.</p>
   </footer>
   <script>
+    let installPromptEvent = null;
+    const installAppButton = document.getElementById('install-app');
+    const installHelp = document.getElementById('install-help');
+    window.addEventListener('beforeinstallprompt', event => {
+      event.preventDefault();
+      installPromptEvent = event;
+    });
+    installAppButton.addEventListener('click', async () => {
+      if (!installPromptEvent) {
+        installHelp.textContent = 'To add this app to your device, open your browser menu and choose “Install app” or “Add to Home Screen.”';
+        installHelp.hidden = false;
+        return;
+      }
+      installPromptEvent.prompt();
+      await installPromptEvent.userChoice;
+      installPromptEvent = null;
+    });
+    window.addEventListener('appinstalled', () => {
+      installHelp.textContent = 'The Halloween Tools app was added to your device.';
+      installHelp.hidden = false;
+    });
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      navigator.serviceWorker.register('./service-worker.js').catch(() => {});
+    }
+
     const mathBattleFrame = document.getElementById('math-battle-frame');
     let mathBattleSizeObserver;
     mathBattleFrame.addEventListener('load', () => {
