@@ -7,3 +7,4 @@
 - The flyer builder exports a PNG of exactly 3300 × 2550 pixels and embeds PNG `pHYs` metadata at 11,811 pixels per meter (about 300 DPI), yielding 11 × 8.5 inches. Verify both pixel dimensions and physical-resolution metadata when changing the export.
 - The homepage's Halloween Math Battle runs in its own iframe, which loads immediately and starts automatically on page load. Its game script starts the 15-second timer as it loads; keep the answer choices and timer active.
 - Keep the parent-folder local `index.html` synced with this repository's `index.html`. Publish changes to GitHub only when the user explicitly asks. Keep changes scoped to the request and preserve existing tool behavior.
+- This site is an installable PWA. Whenever publishing a main-site update, bump `CACHE_NAME` in `service-worker.js` so installed apps detect the waiting version and can show the “Update to our newest version” button.

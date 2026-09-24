@@ -24,6 +24,8 @@ Both website makers are free forever. To publish an exported `index.html` as a l
 
 - `images/Top image.png` is the homepage banner and is used in builders where specified.
 - `images/favicon.png` is the shared site favicon.
+- The main site is installable as a PWA using `site.webmanifest` and `service-worker.js`. Installed copies show an update button when a new service worker is ready; bump the `CACHE_NAME` in `service-worker.js` with each site release so installed apps can detect it.
+- `images/Click to download.png` is the install button artwork. The remaining `images/web-app-manifest-*` files and Apple touch icon provide the app icons.
 
 ## Publish with GitHub Pages
 
