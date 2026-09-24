@@ -11,6 +11,7 @@ Free Halloween website tools from Titan Business Pros LLC. The homepage is [`ind
 5. [Horror Film Trivia Website Maker](horror-film-trivia-website-maker.html) — make a trivia page with a company name and uploaded logo; exports a standalone `index.html`.
 6. [Halloween Flyer Builder](halloween-flyer-builder.html) — design a flyer and export a landscape PNG at 3300 × 2550 pixels with 300-DPI print metadata (11 × 8.5 inches).
 7. [Haunted House Waiver Generator](haunted-house-waiver-generator.html) — customize a haunted attraction's name, rules, and theme, then download a waiver PNG.
+8. [Spooky Flyer Builder](spooky-flyer-builder.html) — choose from 12 templates, customize and position flyer text, and download the design as a PNG.
 
 ## Shared images
 
