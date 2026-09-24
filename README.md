@@ -18,7 +18,7 @@ Both website makers are free forever. To publish an exported `index.html` as a l
 
 ## Game
 
-[Halloween Math Battle](halloween-math-battle.html) is embedded in `index.html` above the footer. Its iframe loads immediately, starts automatically on page load, and gives the active player 15 seconds to choose the correct answer before the turn changes. Players answer using the game's on-page choices.
+[Halloween Math Battle](halloween-math-battle.html) is embedded in `index.html` above the footer on desktop screens only. It is not loaded on mobile. On desktop it starts when loaded and gives each player 15 seconds to choose an answer.
 
 ## Shared images
 

@@ -28,11 +28,6 @@
     .button { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:13px 22px; border:2px solid var(--lime); border-radius:10px; background:var(--lime); color:#19121b; font-weight:900; text-decoration:none; box-shadow:0 5px 0 #688f16; transition:transform .16s,box-shadow .16s; }
     .button:hover { transform:translateY(2px); box-shadow:0 3px 0 #688f16; }
     .button:focus-visible { outline:3px solid white; outline-offset:4px; }
-    .tools { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:48px; }
-    .tool { min-height:190px; padding:22px; border:1px solid #59376a; border-radius:14px; background:linear-gradient(145deg,#2a1437,var(--panel)); }
-    .tool-icon { display:block; margin-bottom:12px; font-size:2rem; }
-    .tool h2 { margin:0 0 8px; color:var(--orange); font-size:1.25rem; }
-    .tool p { margin:0; color:var(--muted); }
     .makers { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:28px; }
     .maker { padding:24px; border:1px solid #694071; border-radius:14px; background:linear-gradient(145deg,#2a1437,var(--panel)); }
     .maker h2 { margin:0 0 9px; color:var(--orange); font-size:1.4rem; }
@@ -47,12 +42,13 @@
     .cta { margin-top:36px; padding:28px; border:1px solid #694071; border-radius:14px; background:#20102b; }
     .cta h2 { margin:0 0 10px; font-size:clamp(1.5rem,4vw,2.2rem); }
     .cta p { color:var(--muted); }
-    .math-battle { margin-top:48px; overflow:hidden; border:1px solid #694071; border-radius:14px; background:#0f0c29; }
+    .math-battle { display:none; margin-top:48px; overflow:hidden; border:1px solid #694071; border-radius:14px; background:#0f0c29; }
     .math-battle iframe { display:block; width:100%; height:1600px; border:0; background:#0f0c29; }
     footer { padding:25px 18px 30px; border-top:2px solid #4c2e5a; background:#100719; text-align:center; color:#e9ddeb; }
     footer p { margin:3px 0; }
     footer .company { color:var(--orange); font-weight:800; }
-    @media(max-width:720px) { main { padding:32px 0 48px; } .tools,.makers { grid-template-columns:1fr; margin-top:34px; } .tool { min-height:auto; } .cta,.maker { padding:22px; } }
+    @media(min-width:721px) { .math-battle { display:block; } }
+    @media(max-width:720px) { main { padding:32px 0 48px; } .makers { grid-template-columns:1fr; margin-top:34px; } .cta,.maker { padding:22px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }
   </style>
 </head>
@@ -75,14 +71,9 @@
         <p>We can turn your event site into a custom website and add your own custom domain for $25. There are no monthly fees or hosting fees. Call or text <a href="tel:+14059987979">405-998-7979</a>, or email <a href="mailto:titanbusinesspros@gmail.com">titanbusinesspros@gmail.com</a>.</p>
       </section>
       <div class="makers" aria-label="Choose one of two free Halloween website makers">
-        <article class="maker"><h2>Classic Website Maker</h2><p>Decorate your page with Halloween icons, custom colors, photos, and spooky sounds.</p><a class="button" href="website-maker.html">Open the Classic Maker</a></article>
+        <article class="maker"><h2>Classic Website Maker</h2><p>Add Halloween icons, custom colors, photos, and spooky sounds.</p><a class="button" href="website-maker.html">Open the Classic Maker</a></article>
         <article class="maker"><h2>Simple Website Maker</h2><p>Build a clean event page with three evenly sized photo uploads in one row and a choice of Halloween sounds.</p><a class="button" href="simple-halloween-website-maker.html">Open the Simple Maker</a></article>
       </div>
-    </section>
-    <section class="tools" aria-label="Free Halloween Website Maker tools">
-      <article class="tool"><span class="tool-icon" aria-hidden="true">??</span><h2>Decorate your page</h2><p>Place 56 Halloween icons around the page, choose your text and background colors, and add images from your device.</p></article>
-      <article class="tool"><span class="tool-icon" aria-hidden="true">??</span><h2>Pick a spooky sound</h2><p>Preview six Halloween sound options in the maker and choose one for your finished website.</p></article>
-      <article class="tool"><span class="tool-icon" aria-hidden="true">???</span><h2>Export your website</h2><p>Download your finished page as a standalone HTML file to share or publish on your own hosting.</p></article>
     </section>
     <section class="cta" aria-labelledby="catering-generator">
       <h2 id="catering-generator">Halloween Catering Generator</h2>
@@ -125,7 +116,7 @@
       <div class="button-row"><a class="button" href="website-maker.html">Classic Website Maker</a><a class="button secondary" href="simple-halloween-website-maker.html">Simple Website Maker</a></div>
     </section>
     <section class="math-battle" id="math-battle" aria-label="Halloween Math Battle">
-      <iframe id="math-battle-frame" src="halloween-math-battle.html" title="Halloween Math Battle: solve timed math questions and defend your haunted house" loading="eager"></iframe>
+      <iframe id="math-battle-frame" data-src="halloween-math-battle.html" title="Halloween Math Battle: solve timed math questions and defend your haunted house" loading="eager"></iframe>
     </section>
   </main>
   <footer>
@@ -186,9 +177,21 @@
       });
     }
 
-    const mathBattleFrame = document.getElementById('math-battle-frame');
     let mathBattleSizeObserver;
+    const mathBattleFrame = document.getElementById('math-battle-frame');
+    const mathBattleViewport = window.matchMedia('(min-width: 721px)');
+    const updateMathBattleForViewport = () => {
+      if (mathBattleViewport.matches) {
+        if (mathBattleFrame.getAttribute('src') !== mathBattleFrame.dataset.src) {
+          mathBattleFrame.src = mathBattleFrame.dataset.src;
+        }
+      } else {
+        mathBattleFrame.removeAttribute('src');
+        mathBattleFrame.style.height = '0px';
+      }
+    };
     mathBattleFrame.addEventListener('load', () => {
+      if (!mathBattleViewport.matches) return;
       try {
         const resizeMathBattle = () => {
           const gameDocument = mathBattleFrame.contentDocument;
@@ -207,6 +210,8 @@
         // Keep the responsive fallback height for local file previews with restricted iframe access.
       }
     });
+    updateMathBattleForViewport();
+    mathBattleViewport.addEventListener('change', updateMathBattleForViewport);
   </script>
 </body>
 </html>
