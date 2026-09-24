@@ -4,14 +4,17 @@ Free Halloween website tools from Titan Business Pros LLC. The homepage is [`ind
 
 ## Tools
 
-1. [Halloween Website Maker](website-maker.html) — build and export a decorated Halloween website.
-2. [Halloween Catering Generator](halloween-catering-generator.html) — create a Halloween catering order form.
-3. [Halloween Coupon Generator](halloween-coupon-generator.html) — create Halloween coupons.
-4. [Halloween QR Code Generator](halloween-qr-code-generator.html) — make scannable, themed QR codes for website addresses or text.
-5. [Horror Film Trivia Website Maker](horror-film-trivia-website-maker.html) — make a trivia page with a company name and uploaded logo; exports a standalone `index.html`.
-6. [Halloween Flyer Builder](halloween-flyer-builder.html) — design a flyer and export a landscape PNG at 3300 × 2550 pixels with 300-DPI print metadata (11 × 8.5 inches).
-7. [Haunted House Waiver Generator](haunted-house-waiver-generator.html) — customize a haunted attraction's name, rules, and theme, then download a waiver PNG.
-8. [Spooky Flyer Builder](spooky-flyer-builder.html) — choose from 12 templates, customize and position flyer text, and download the design as a PNG.
+1. [Classic Halloween Website Maker](website-maker.html) — build a decorated Halloween events website with icons, photos, colors, and sounds.
+2. [Simple Halloween Website Maker](simple-halloween-website-maker.html) — build a clean event page with three aligned photo uploads and a choice of sounds.
+3. [Halloween Catering Generator](halloween-catering-generator.html) — create a Halloween catering order form.
+4. [Halloween Coupon Generator](halloween-coupon-generator.html) — create Halloween coupons.
+5. [Halloween QR Code Generator](halloween-qr-code-generator.html) — make scannable, themed QR codes for website addresses or text.
+6. [Horror Film Trivia Website Maker](horror-film-trivia-website-maker.html) — make a trivia page with a company name and uploaded logo; exports a standalone `index.html`.
+7. [Halloween Flyer Builder](halloween-flyer-builder.html) — design a flyer and export a landscape PNG at 3300 × 2550 pixels with 300-DPI print metadata (11 × 8.5 inches).
+8. [Haunted House Waiver Generator](haunted-house-waiver-generator.html) — customize a haunted attraction's name, rules, and theme, then download a waiver PNG.
+9. [Spooky Flyer Builder](spooky-flyer-builder.html) — choose from 12 templates, customize and position flyer text, and download the design as a PNG.
+
+Both website makers are free forever. To publish an exported `index.html` as a live website, add it to a GitHub repository and enable GitHub Pages. [Watch the GitHub publishing tutorial](https://www.youtube.com/watch?v=k_zVscN_gDY). A custom website and domain setup is available for $25, with no monthly or hosting fees; call or text 405-998-7979 or email titanbusinesspros@gmail.com.
 
 ## Game
 
