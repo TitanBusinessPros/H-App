@@ -16,8 +16,8 @@
     body { margin:0; background:var(--night); color:var(--white); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
     a { color:inherit; }
     .cover { display:block; width:100%; height:auto; }
-    .witch-stage { position:relative; width:100%; height:clamp(260px,68vw,840px); overflow:hidden; pointer-events:none; }
-    .witch-stage img { position:absolute; top:50%; left:0; width:min(96vw,1360px); height:auto; transform:translate(-110%,-50%); animation:main-witch-flight 18s linear infinite; will-change:transform; }
+    .witch-stage { position:relative; width:100%; height:clamp(260px,34vw,420px); overflow:hidden; pointer-events:none; }
+    .witch-stage img { position:absolute; top:50%; left:0; width:min(48vw,680px); height:auto; transform:translate(-110%,-50%); animation:main-witch-flight 18s linear infinite; will-change:transform; }
     @keyframes main-witch-flight { from { transform:translate(-110%,-50%); } to { transform:translate(100vw,-50%); } }
     @media(prefers-reduced-motion:reduce) { .witch-stage img { visibility:hidden; animation:none; } }
     main { width:min(1080px, calc(100% - 36px)); margin:0 auto; padding:48px 0 72px; text-align:center; }
