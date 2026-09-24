@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#170923">
+  <meta name="description" content="Make a free Halloween website with Titan Business Pros. Add spooky decorations, photos, colors, and sounds, then export your page.">
+  <title>Free Halloween Tools | Titan Business Pros</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    :root { color-scheme: dark; --night:#170923; --panel:#24112f; --orange:#ff781f; --lime:#baff38; --white:#fff8ee; --muted:#e4d9e9; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--night); color:var(--white); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    a { color:inherit; }
+    .cover { display:block; width:100%; height:auto; }
+    main { width:min(1080px, calc(100% - 36px)); margin:0 auto; padding:48px 0 72px; }
+    .eyebrow { color:var(--lime); font-size:.82rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { max-width:760px; margin:10px 0 12px; font-size:clamp(2.25rem,6vw,4.6rem); line-height:1.04; letter-spacing:-.045em; }
+    .intro { max-width:700px; margin:0 0 28px; color:var(--muted); font-size:clamp(1.05rem,2vw,1.25rem); }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding:13px 22px; border:2px solid var(--lime); border-radius:10px; background:var(--lime); color:#19121b; font-weight:900; text-decoration:none; box-shadow:0 5px 0 #688f16; transition:transform .16s,box-shadow .16s; }
+    .button:hover { transform:translateY(2px); box-shadow:0 3px 0 #688f16; }
+    .button:focus-visible { outline:3px solid white; outline-offset:4px; }
+    .tools { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:48px; }
+    .tool { min-height:190px; padding:22px; border:1px solid #59376a; border-radius:14px; background:linear-gradient(145deg,#2a1437,var(--panel)); }
+    .tool-icon { display:block; margin-bottom:12px; font-size:2rem; }
+    .tool h2 { margin:0 0 8px; color:var(--orange); font-size:1.25rem; }
+    .tool p { margin:0; color:var(--muted); }
+    .cta { margin-top:36px; padding:28px; border:1px solid #694071; border-radius:14px; background:#20102b; }
+    .cta h2 { margin:0 0 10px; font-size:clamp(1.5rem,4vw,2.2rem); }
+    .cta p { color:var(--muted); }
+    footer { padding:25px 18px 30px; border-top:2px solid #4c2e5a; background:#100719; text-align:center; color:#e9ddeb; }
+    footer p { margin:3px 0; }
+    footer .company { color:var(--orange); font-weight:800; }
+    @media(max-width:720px) { main { padding:32px 0 48px; } .tools { grid-template-columns:1fr; margin-top:34px; } .tool { min-height:auto; } .cta { padding:22px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }
+  </style>
+</head>
+<body>
+  <img class="cover" src="images/Top%20image.png" alt="Titan Business Pros presents the Halloween Website Maker and free Halloween tools" fetchpriority="high">
+  <main>
+    <section aria-labelledby="welcome">
+      <span class="eyebrow">Free tools from Titan Business Pros LLC</span>
+      <h1 id="welcome">Make something wicked this Halloween.</h1>
+      <p class="intro">Create a spooky party page or haunted-house website with our free Halloween Website Maker. Add your own photos and text, decorate with Halloween icons, choose the colors and sound, then download your finished page.</p>
+      <a class="button" href="website-maker.html">Open the Website Maker <span aria-hidden="true">&nbsp;?</span></a>
+    </section>
+    <section class="tools" aria-label="Free Halloween Website Maker tools">
+      <article class="tool"><span class="tool-icon" aria-hidden="true">??</span><h2>Decorate your page</h2><p>Place 56 Halloween icons around the page, choose your text and background colors, and add images from your device.</p></article>
+      <article class="tool"><span class="tool-icon" aria-hidden="true">??</span><h2>Pick a spooky sound</h2><p>Preview six Halloween sound options in the maker and choose one for your finished website.</p></article>
+      <article class="tool"><span class="tool-icon" aria-hidden="true">???</span><h2>Export your website</h2><p>Download your finished page as a standalone HTML file to share or publish on your own hosting.</p></article>
+    </section>
+    <section class="cta" aria-labelledby="start">
+      <h2 id="start">Your haunted website is just a few clicks away.</h2>
+      <p>Build a Halloween party invitation, haunted-house page, or another spooky idea of your own.</p>
+      <a class="button" href="website-maker.html">Website maker <span aria-hidden="true">&nbsp;?</span></a>
+    </section>
+  </main>
+  <footer>
+    <p class="company">Created by Titan Business Pros LLC</p>
+    <p>405-998-7979&nbsp; <a href="https://www.oklahoma.marketing">www.oklahoma.marketing</a></p>
+    <p>Oklahoma City, OK</p>
+    <p>2026 Titan Business Pros LLC. All rights reserved.</p>
+  </footer>
+</body>
+</html>
